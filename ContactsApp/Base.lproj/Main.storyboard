@@ -151,7 +151,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                     <connections>
                                                         <action selector="textFieldChanged:" destination="pMK-w5-x8v" eventType="editingChanged" id="Gq9-vA-FWa"/>
                                                     </connections>
@@ -178,7 +178,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -202,7 +202,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -220,19 +220,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter  email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-3L-qH3">
-                                                    <rect key="frame" x="16" y="7" width="309" height="50"/>
+                                                    <rect key="frame" x="16" y="7" width="343" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="pz0-oR-pVi"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fw2-3L-qH3" firstAttribute="leading" secondItem="BOq-R2-Euw" secondAttribute="leading" constant="16" id="VRO-ba-0kl"/>
                                                 <constraint firstItem="fw2-3L-qH3" firstAttribute="centerY" secondItem="BOq-R2-Euw" secondAttribute="centerY" id="hCA-2W-h6n"/>
-                                                <constraint firstAttribute="trailing" secondItem="fw2-3L-qH3" secondAttribute="trailing" constant="50" id="lQ9-u2-4UG"/>
+                                                <constraint firstAttribute="trailing" secondItem="fw2-3L-qH3" secondAttribute="trailing" constant="16" id="lQ9-u2-4UG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -324,7 +324,7 @@
                             <rect key="frame" x="0.0" y="434" width="375" height="162"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-am-vxu">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-am-vxu">
                                     <rect key="frame" x="2" y="8" width="371" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -434,7 +434,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter  email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p69-TG-IRy">
-                                                    <rect key="frame" x="16" y="7" width="309" height="50"/>
+                                                    <rect key="frame" x="16" y="7" width="343" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="tpL-pP-nL4"/>
                                                     </constraints>
@@ -445,7 +445,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="p69-TG-IRy" firstAttribute="centerY" secondItem="9Ia-Hc-BP1" secondAttribute="centerY" id="Vyr-2y-56X"/>
-                                                <constraint firstAttribute="trailing" secondItem="p69-TG-IRy" secondAttribute="trailing" constant="50" id="WIm-AB-kJR"/>
+                                                <constraint firstAttribute="trailing" secondItem="p69-TG-IRy" secondAttribute="trailing" constant="16" id="WIm-AB-kJR"/>
                                                 <constraint firstItem="p69-TG-IRy" firstAttribute="leading" secondItem="9Ia-Hc-BP1" secondAttribute="leading" constant="16" id="f39-xD-hgO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -482,7 +482,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1823" y="-565"/>
+            <point key="canvasLocation" x="1821.5999999999999" y="-565.36731634182911"/>
         </scene>
     </scenes>
 </document>

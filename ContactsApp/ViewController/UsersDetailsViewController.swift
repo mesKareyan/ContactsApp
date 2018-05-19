@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 enum UserDetailViewControllerType {
     case newUser
@@ -30,11 +32,6 @@ class UsersDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        //
-//        self.doneButtonItem.isEnabled = true
-//        let user = User(_id: "", firstName: "ME", lastName: "And you", phone: "42", email: "forever", notes: "no!")
-//        self.userViewModel.user = user
-//        self.userViewModel.saveUserData()
     }
     
     func configureUI() {
@@ -47,9 +44,11 @@ class UsersDetailsViewController: UITableViewController {
           case .newUser:
             textFields.forEach { $0.isEnabled = true}
             notesTextView.isEditable = true
+            self.doneButtonItem.isEnabled = false
           case .userDetails:
             textFields.forEach { $0.isEnabled = false }
             notesTextView.isEditable = false
+            userImageView.isUserInteractionEnabled = false
             doneButtonItem.isEnabled = false
             configure(for: userViewModel.user)
         }
@@ -79,11 +78,12 @@ class UsersDetailsViewController: UITableViewController {
     
     //MARK: Actions
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        let user = User(_id: "", firstName: firstNameTextFiled.text!,
-                        lastName: lastNameTextFiled.text!,
-                        phone: phoneTextFiled.text!,
-                        email: emailTextField.text!,
-                        notes: notesTextView.text!)
+        var user = User()
+        user.firstName = firstNameTextFiled.text!
+        user.lastName = lastNameTextFiled.text!
+        user.phone = phoneTextFiled.text!
+        user.email = emailTextField.text!
+        user.notes = notesTextView.text!
         self.userViewModel.user = user
         self.userViewModel.saveUserData()
         navigationController?.popViewController(animated: true)
@@ -114,6 +114,13 @@ extension UsersDetailsViewController: UITextViewDelegate {
         self.doneButtonItem.isEnabled = checkTextInputs()
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
     func checkTextInputs() -> Bool {
         let emptyTextFields =  [firstNameTextFiled,
                                 lastNameTextFiled,
@@ -127,6 +134,7 @@ extension UsersDetailsViewController: UITextViewDelegate {
 }
 
 extension UsersDetailsViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case firstNameTextFiled:

@@ -18,6 +18,7 @@ enum NetworkOperationResult<T> {
     case success(result: T)
     case failure(with: Error)
 }
+
 typealias NetworkOperationCompletion<T> = (NetworkOperationResult<T>) -> ()
 
 struct API {
@@ -63,6 +64,7 @@ struct API {
                              forHTTPHeaderField: "Content-Type")
             request.setValue("application/json; charset=utf-8",
                              forHTTPHeaderField: "Accept")
+            request.setValue(apiKey, forHTTPHeaderField: Headers.apiKey)
             request.httpMethod = "POST"
             let userJsonData = try? JSONSerialization.data(withJSONObject: user.jsonDict)
             request.httpBody = userJsonData

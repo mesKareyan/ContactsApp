@@ -31,6 +31,10 @@ class UsersListViewController: UIViewController {
         self.title = "Contacts"
         self.tableView.dataSource = self.dataSource
         self.tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.showLoadingHUD()
         self.viewModel.fetchUsers { [unowned self] in
             self.tableView.reloadData()

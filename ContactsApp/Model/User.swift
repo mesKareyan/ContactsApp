@@ -10,20 +10,22 @@ import Foundation
 
 struct User: Codable {
     
-    let _id: String
-    let firstName: String
-    let lastName: String
-    let phone: String
-    let email: String
-    let notes: String
+    var _id: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    var phone: String = ""
+    var email: String = ""
+    var notes: String = ""
+    var images: [String] = []
     
-    var jsonDict: [String: String] {
+    var jsonDict: [String: Any] {
         return [
             "firstName": firstName,
             "lastName" : lastName,
             "phone": phone,
             "email": email,
-            "notes" :notes
+            "notes": notes,
+            "images": images
         ]
     }
     

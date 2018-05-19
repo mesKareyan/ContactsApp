@@ -23,8 +23,5 @@ class UserTableViewCell: UITableViewCell {
         imageView?.clipsToBounds = true
     }
     
-    
-
-
 }
 
